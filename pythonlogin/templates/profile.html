@@ -1,0 +1,66 @@
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    </head>
+    <body class="loggedin">
+        <nav class="navtop">
+            <div>
+                <h1>Recommender system for e-learning</h1>
+                <a href="{{ url_for('home') }}"><i class="fas fa-home"></i>Home</a>
+                <a href="{{ url_for('profile') }}"><i class="fas fa-user-circle"></i>Profile</a>
+                <a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Logout</a>
+            </div>
+        </nav>
+        <div class="content">
+            <h2>Profile Page</h2>
+            <div>
+                <p>Your account details are below:</p>
+                <table>
+                    <tr>
+                        <td>Username:</td>
+                        <td>{{ account['username'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Password:</td>
+                        <td>{{ account['password'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td>{{ account['email'] }}</td>
+                    </tr>
+                
+                </table>
+            </div>
+        </div>
+        
+        <div class="login">
+            <h1>E-LEARNING RECOMMENDER SYSTEM </h1>
+            <h1>RECOMMENDER</h1>
+            <div class="links">
+                <a href="{{ url_for('login') }}" class="active">ENTER THE COURSE-ID AND STUDENT_ID</a>
+            </div>
+            <form action="{{ url_for('profile2') }}">
+                <label for="Student_id">
+                    <i class="fas fa-user"></i>
+                </label>
+                <input type="text" name="Student_id" placeholder="Student_id" id="Student_id" required>
+                <label for="Course_id">
+                    <i class="fas fa-user"></i>
+                </label>
+                <input type="text" name="Course_id" placeholder="Course_id" id="Course_id" required>
+                <div class="msg">{{ msg }}</div>
+                
+                
+                <input type="submit" value="submit">
+                
+            </form>
+        </div>
+    </body>
+</html>
