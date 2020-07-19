@@ -132,13 +132,13 @@ yhat_classes = model.predict_classes(X5, verbose=0)
 yhat_probs = yhat_probs[:, 0]
 yhat_classes = yhat_classes[:, 0]
  # accuracy: (tp + tn) / (p + n)
-aaccuracy = accuracy_score(Y1, yhat_probs)
+accuracy = accuracy_score(Y1, yhat_probs)
 # precision tp / (tp + fp)
-precsion = precision_score(Y1, yhat_probs)
+precision = precision_score(Y1, yhat_probs)
 # recall: tp / (tp + fn)
-recall1 = recall_score(Y1, yhat_probs)
+recall = recall_score(Y1, yhat_probs)
 # f1: 2 tp / (2 tp + fp + fn)
-f1 = f1_score(Y1, yhat_probs
+fscore = f1_score(Y1, yhat_probs
 #[print(predictions[i], test.final_result.iloc[i]) for i in range(0,10)]
 
 
